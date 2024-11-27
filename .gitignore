@@ -1,0 +1,83 @@
+# Compiled object files
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.lib
+*.ndk
+*.out
+*.so
+*.idb
+*.tlog
+*.tmp
+
+# Visual Studio folders
+.vs/
+.vscode/
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Backup & temporary files
+~$*
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs & Debug
+*.log
+*.tlog
+*.ide
+*.ipch
+
+# Rider files
+.idea/
+*.sln.iml
+
+# Configuration files
+appsettings.*.json
+
+# Generated files
+*.g.cs
+*.AssemblyAttributes.cs
+
+# Publish artifacts
+publish/
+wwwroot/
+
+# IDE files
+*.sln.metaproj
+*.csproj.user
+*.csproj.vspscc
+*.sln.cache
+
+# Resharper & Analysis
+_ReSharper*/
+*.DotSettings.user
+
+# Others
+.DS_Store
+Thumbs.db
+
+CleanArchitecture.API/appsettings.json
