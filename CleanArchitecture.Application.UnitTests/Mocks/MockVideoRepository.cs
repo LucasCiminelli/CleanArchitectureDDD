@@ -16,7 +16,7 @@ namespace CleanArchitecture.Application.UnitTests.Mock
         public static Mock<IVideoRepository> GetVideoRepository()
         {
             var fixture = new Fixture();
-
+            fixture.Behaviors.Add(new OmitOnRecursionBehavior()); //solucion para el problema de referencias circulares al momento de generar data mock
             var videos = fixture.CreateMany<Video>().ToList();
 
 

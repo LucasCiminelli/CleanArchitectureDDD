@@ -15,9 +15,9 @@ namespace CleanArchitecture.Domain
 
        public virtual Streamer? Streamer { get; set; }
 
-        public virtual ICollection<Actor> Actores { get; set; }
+        public virtual ICollection<Actor>? Actores { get; set; }
 
-        public virtual Director Director { get; set; }
+        public virtual Director? Director { get; set; }
 
     }
 }
