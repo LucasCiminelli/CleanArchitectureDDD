@@ -23,7 +23,7 @@ namespace CleanArchitecture.API.Controllers
 
         
         [HttpPost(Name = "CreateStreamer")]
-        [Authorize(Roles = "Administrator")] //solo usuarios con rol de administrador pueden crear streamers
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> CreateStreamer([FromBody] CreateStreamerCommand command)
         {

@@ -15,7 +15,6 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<CreateStreamerCommand, Streamer>();
             CreateMap<UpdateStreamerCommand, Streamer>();
             CreateMap<CreateDirectorCommand, Director>();
-            
         }
     }
 }

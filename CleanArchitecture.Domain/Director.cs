@@ -5,8 +5,10 @@ namespace CleanArchitecture.Domain
 {
     public class Director : BaseDomainModel
     {
-        
-        
+        public Director()
+        {
+        }
+
         public string? Nombre { get; set; }
 
         public string? Apellido { get; set; }

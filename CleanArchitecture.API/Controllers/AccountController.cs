@@ -8,7 +8,6 @@ namespace CleanArchitecture.API.Controllers
     [Route("api/v1/[controller]")]
     public class AccountController : ControllerBase
     {
-
         private readonly IAuthService _authService;
 
         public AccountController(IAuthService authService)
@@ -16,11 +15,10 @@ namespace CleanArchitecture.API.Controllers
             _authService = authService;
         }
 
-
         [HttpPost("Login")]
         public async Task<ActionResult<AuthResponse>> Login([FromBody] AuthRequest request)
-        {
-            return Ok(await _authService.Login(request));
+        { 
+            return Ok( await _authService.Login(request));
         }
 
         [HttpPost("Register")]
@@ -28,8 +26,6 @@ namespace CleanArchitecture.API.Controllers
         {
             return Ok(await _authService.Register(request));
         }
-
-
 
     }
 }

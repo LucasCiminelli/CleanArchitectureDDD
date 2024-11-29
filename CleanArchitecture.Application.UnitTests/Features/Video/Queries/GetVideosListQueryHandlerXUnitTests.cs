@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
+using CleanArchitecture.Infrastructure.Repositories;
 using Moq;
 using Shouldly;
 using System;
@@ -16,9 +17,8 @@ namespace CleanArchitecture.Application.UnitTests.Features.Video.Queries
 {
     public class GetVideosListQueryHandlerXUnitTests
     {
-
         private readonly IMapper _mapper;
-        private readonly Mock<IUnitOfWork> _unitOfWork;
+        private readonly Mock<UnitOfWork> _unitOfWork;
 
         public GetVideosListQueryHandlerXUnitTests()
         {
@@ -27,24 +27,24 @@ namespace CleanArchitecture.Application.UnitTests.Features.Video.Queries
             {
                 c.AddProfile<MappingProfile>();
             });
-
-            mapperConfig.AssertConfigurationIsValid();
             _mapper = mapperConfig.CreateMapper();
+
+
+            MockVideoRepository.AddDataVideoRepository(_unitOfWork.Object.StreamerDbContext);
+
         }
 
         [Fact]
         public async Task GetVideoListTest()
-        {
-
-            var handler = new GetVideosListQueryHandler(_unitOfWork.Object,_mapper);
-
-            var request = new GetVideosListQuery("system");
-
+        { 
+            var handler = new GetVideosListQueryHandler(_unitOfWork.Object, _mapper);
+            var request = new GetVideosListQuery("Lucas");
+           
             var result = await handler.Handle(request, CancellationToken.None);
-
 
             result.ShouldBeOfType<List<VideosVm>>();
 
+            result.Count.ShouldBe(1);
         }
 
     }

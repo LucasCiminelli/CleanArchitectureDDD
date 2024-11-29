@@ -12,7 +12,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
 
         public RepositoryBase(StreamerDbContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _context = context;
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
@@ -25,9 +25,9 @@ namespace CleanArchitecture.Infrastructure.Repositories
                 return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>>? predicate = null,
-                                       Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-                                       string? includeString = null,
+        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
+                                       Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                       string includeString = null,
                                        bool disableTracking = true)
         {
             IQueryable<T> query = _context.Set<T>();
@@ -44,9 +44,9 @@ namespace CleanArchitecture.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>>? predicate = null,
-                                     Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-                                     List<Expression<Func<T, object>>>? includes = null,
+        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
+                                     Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                     List<Expression<Func<T, object>>> includes = null,
                                      bool disableTracking = true)
         { 
         

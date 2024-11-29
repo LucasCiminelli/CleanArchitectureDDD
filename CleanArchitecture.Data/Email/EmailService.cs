@@ -4,11 +4,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CleanArchitecture.Infrastructure.Email
 {
@@ -16,6 +12,8 @@ namespace CleanArchitecture.Infrastructure.Email
     {
         public EmailSettings _emailSettings { get; }
         public ILogger<EmailService> _logger { get; }
+
+        public EmailService() { }
 
         public EmailService(IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
         {

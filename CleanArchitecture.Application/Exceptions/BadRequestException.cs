@@ -2,7 +2,7 @@
 {
     public class BadRequestException : ApplicationException
     {
-        public BadRequestException(string message) : base(message) //mensaje inyectado hacia el padre.
+        public BadRequestException(string message) : base(message)
         {
         }
     }
