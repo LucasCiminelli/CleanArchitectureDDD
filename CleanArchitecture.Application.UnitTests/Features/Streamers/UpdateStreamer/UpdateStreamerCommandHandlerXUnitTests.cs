@@ -17,7 +17,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.UpdateStrea
         private readonly IMapper _mapper;
         private readonly Mock<UnitOfWork> _unitOfWork;
         private readonly Mock<IEmailService> _emailService;
-        private readonly Mock<ILogger<DeleteStreamerCommandHandler>> _logger;
+        private readonly Mock<ILogger<UpdateStreamerCommandHandler>> _logger;
 
         public UpdateStreamerCommandHandlerXUnitTests()
         {
@@ -30,7 +30,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.UpdateStrea
 
             _emailService = new Mock<IEmailService>();
 
-            _logger = new Mock<ILogger<DeleteStreamerCommandHandler>>();
+            _logger = new Mock<ILogger<UpdateStreamerCommandHandler>>();
 
 
             MockStreamerRepository.AddDataStreamerRepository(_unitOfWork.Object.StreamerDbContext);
@@ -46,7 +46,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.UpdateStrea
                 Url = "https://vaxistreaming.com"
             };
 
-            var handler = new DeleteStreamerCommandHandler(_unitOfWork.Object, _mapper, _emailService.Object, _logger.Object);
+            var handler = new UpdateStreamerCommandHandler(_unitOfWork.Object, _mapper, _emailService.Object, _logger.Object);
 
             var result = await handler.Handle(streamerInput, CancellationToken.None);
 

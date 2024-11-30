@@ -15,7 +15,9 @@ namespace CleanArchitecture.Application.UnitTests.Mock
                 .Options;
 
             var streamerDbContextFake = new StreamerDbContext(options);
+
             streamerDbContextFake.Database.EnsureDeleted();
+
             var mockUnitOfWork = new Mock<UnitOfWork>(streamerDbContextFake);
                     
 
