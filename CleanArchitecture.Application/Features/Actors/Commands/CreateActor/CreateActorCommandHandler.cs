@@ -27,13 +27,21 @@ namespace CleanArchitecture.Application.Features.Actors.Commands.CreateActor
 
 
 
-        public Task<int> Handle(CreateActorCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateActorCommand request, CancellationToken cancellationToken)
         {
             var actorEntity = _mapper.Map<Actor>(request);
 
+            _unitOfWork.Repository<Actor>().AddEntity(actorEntity);
 
+            var result = await _unitOfWork.Complete();
 
+            if (result <= 0)
+            {
+                _logger.LogError("No se insertó el record de Actor");
+                throw new Exception("No se insertó el record de Actor");
+            }
 
+            return actorEntity.Id;
         }
     }
 }
