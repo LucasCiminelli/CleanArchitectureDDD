@@ -33,7 +33,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.DeleteStrea
         }
 
         [Fact]
-        public async Task UpdateStreamerCommand_InputStreamer_ReturnsUnit()
+        public async Task DeleteStreamerCommand_InputStreamerById_ReturnsUnit()
         {
             var streamerInput = new DeleteStreamerCommand
             {
