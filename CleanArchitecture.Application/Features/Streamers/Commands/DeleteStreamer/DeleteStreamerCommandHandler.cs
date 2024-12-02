@@ -25,6 +25,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.DeleteStream
         public async Task<Unit> Handle(DeleteStreamerCommand request, CancellationToken cancellationToken)
         {
             var streamerToDelete = await _unitOfWork.StreamerRepository.GetByIdAsync(request.Id);
+
             if (streamerToDelete == null)
             {
                 _logger.LogError($"{request.Id} streamer no existe en el sistema");

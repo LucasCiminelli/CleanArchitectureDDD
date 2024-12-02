@@ -34,7 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Actor\DeleteActor\" />
     <Folder Include="Features\Video\Commands\" />
   </ItemGroup>
 

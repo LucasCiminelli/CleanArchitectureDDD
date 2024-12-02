@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Actors\Commands\DeleteActor\" />
     <Folder Include="Features\Actors\Queries\" />
     <Folder Include="Features\Directors\Commands\DeleteDirector\" />
     <Folder Include="Features\Directors\Commands\UpdateDirector\" />
