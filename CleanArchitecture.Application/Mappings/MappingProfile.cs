@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CleanArchitecture.Application.Features.Actors.Commands.CreateActor;
+using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
 using CleanArchitecture.Application.Features.Directors.Commands.CreateDirector;
 using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
@@ -15,6 +17,8 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<CreateStreamerCommand, Streamer>();
             CreateMap<UpdateStreamerCommand, Streamer>();
             CreateMap<CreateDirectorCommand, Director>();
+            CreateMap<CreateActorCommand, Actor>();
+            CreateMap<UpdateActorCommand, Actor>();
         }
     }
 }
