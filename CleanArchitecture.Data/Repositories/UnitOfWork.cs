@@ -31,7 +31,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
             {
                 return await _context.SaveChangesAsync();
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 throw new Exception("Err");
             }
             

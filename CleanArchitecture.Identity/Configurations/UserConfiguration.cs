@@ -20,7 +20,7 @@ namespace CleanArchitecture.Identity.Configurations
                         Apellidos = "Drez",
                         UserName = "vaxidrez",
                         NormalizedUserName = "vaxidrez",
-                        PasswordHash = hasher.HashPassword(null, "VaxiDrez2025$"),
+                        PasswordHash = hasher.HashPassword(null!, "VaxiDrez2025$"),
                         EmailConfirmed = true,
                     },
                     new ApplicationUser

@@ -17,7 +17,7 @@ namespace CleanArchitecture.Domain
 
         public virtual ICollection<Actor> Actores { get; set; }
 
-        public virtual Director Director { get; set; }
+        public virtual Director? Director { get; set; }
 
     }
 }

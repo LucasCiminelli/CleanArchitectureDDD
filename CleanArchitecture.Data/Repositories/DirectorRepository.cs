@@ -18,7 +18,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
 
         public async Task<Director> GetDirectorByName(string directorName)
         {
-            return await _context.Directores.Where(d => d.Nombre == directorName).FirstOrDefaultAsync();
+            return await _context!.Directores!.Where(d => d.Nombre == directorName).FirstOrDefaultAsync();
         }
     }
 }

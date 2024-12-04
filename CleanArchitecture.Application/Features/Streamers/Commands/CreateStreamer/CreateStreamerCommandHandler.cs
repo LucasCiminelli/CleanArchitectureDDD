@@ -59,7 +59,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands
             {
                 await _emailservice.SendEmail(email);
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 _logger.LogError($"Errores enviando el email de {streamer.Id}");
             }
 
