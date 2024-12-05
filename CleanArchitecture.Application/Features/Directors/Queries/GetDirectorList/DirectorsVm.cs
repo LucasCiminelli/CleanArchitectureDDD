@@ -8,7 +8,6 @@ namespace CleanArchitecture.Application.Features.Directors.Queries.GetDirectorLi
 {
     public class DirectorsVm
     {
-
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
         public int VideoId { get; set; }
