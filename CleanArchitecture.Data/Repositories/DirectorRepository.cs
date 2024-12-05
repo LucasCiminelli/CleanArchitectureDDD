@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Infrastructure.Repositories
 {
-    internal class DirectorRepository : RepositoryBase<Director>, IDirectorRepository
+    public class DirectorRepository : RepositoryBase<Director>, IDirectorRepository
     {
         public DirectorRepository(StreamerDbContext context) : base(context)
         {
