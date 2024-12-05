@@ -40,13 +40,9 @@ namespace CleanArchitecture.Application.UnitTests.Features.Actor.CreateActor
 
 
             MockActorRepository.AddDataActorRepository(_unitOfWork.Object.StreamerDbContext);
-
-
         }
 
-
         [Fact]
-
         public async Task CreateActorCommand_InputActor_ReturnsNumber()
         {
 
@@ -64,7 +60,6 @@ namespace CleanArchitecture.Application.UnitTests.Features.Actor.CreateActor
 
 
             result.ShouldBeOfType<int>();
-
         }
     }
 }

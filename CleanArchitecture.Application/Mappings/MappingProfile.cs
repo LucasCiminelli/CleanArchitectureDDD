@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Features.Actors.Commands.CreateActor;
 using CleanArchitecture.Application.Features.Actors.Commands.DeleteActor;
 using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
 using CleanArchitecture.Application.Features.Directors.Commands.CreateDirector;
+using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
 using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
@@ -22,6 +23,7 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<DeleteStreamerCommand, Streamer>();
 
             CreateMap<CreateDirectorCommand, Director>();
+            CreateMap<Director, DirectorsVm>();
 
             CreateMap<CreateActorCommand, Actor>();
             CreateMap<UpdateActorCommand, Actor>();
