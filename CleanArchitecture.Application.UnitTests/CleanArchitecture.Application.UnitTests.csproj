@@ -34,7 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Director\DeleteDirector\" />
     <Folder Include="Features\Video\Commands\" />
   </ItemGroup>
 
