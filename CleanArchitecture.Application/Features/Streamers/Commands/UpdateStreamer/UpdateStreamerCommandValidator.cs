@@ -10,7 +10,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStream
                 .NotNull().WithMessage("{Nombre} no permite valores nulos");
 
             RuleFor(p => p.Url)
-                .NotNull().WithMessage("{Ur;} no permite valores nulos");
+                .NotNull().WithMessage("{Url} no permite valores nulos");
         }
     }
 }
