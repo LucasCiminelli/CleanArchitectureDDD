@@ -43,7 +43,6 @@ namespace CleanArchitecture.Application.UnitTests.Features.Director.CreateDirect
 
 
             MockDirectorRepository.AddDataDirectorRepository(_unitOfWork.Object.StreamerDbContext);
-            
         }
 
 
@@ -66,7 +65,6 @@ namespace CleanArchitecture.Application.UnitTests.Features.Director.CreateDirect
 
 
             result.ShouldBeOfType<int>();
-
         }
     }
 }
