@@ -11,6 +11,7 @@ namespace CleanArchitecture.Application.Contracts.Persistence
     {
 
         Task<Director> GetDirectorByName(string directorName);
+        Task<IEnumerable<Director>> GetDirectorsByUsername(string username);
 
     }
 }

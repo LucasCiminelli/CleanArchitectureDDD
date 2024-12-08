@@ -20,5 +20,12 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             return await _context!.Directores!.Where(d => d.Nombre == directorName).FirstOrDefaultAsync();
         }
+
+
+        public async Task<IEnumerable<Director>> GetDirectorsByUsername(string username)
+        {
+            return await _context.Directores!.Where(d => d.CreatedBy == username).ToListAsync();
+        }
     }
+
 }
