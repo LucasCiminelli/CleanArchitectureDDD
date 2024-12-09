@@ -9,5 +9,11 @@ namespace CleanArchitecture.Application.Contracts.Persistence
 {
     public interface IActorRepository : IAsyncRepository<Actor>
     {
+
+        Task<Actor> GetActorByNombre(string nombre);
+
+        Task<IEnumerable<Actor>> GetActorsByUsername(string username);
+
+
     }
 }

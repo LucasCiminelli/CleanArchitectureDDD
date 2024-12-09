@@ -2,6 +2,7 @@
 using CleanArchitecture.Application.Features.Actors.Commands.CreateActor;
 using CleanArchitecture.Application.Features.Actors.Commands.DeleteActor;
 using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
+using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
 using CleanArchitecture.Application.Features.Directors.Commands.CreateDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.DeleteDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.UpdateDirector;
@@ -20,6 +21,7 @@ namespace CleanArchitecture.Application.Mappings
         {
             CreateMap<Video, VideosVm>();
             CreateMap<Director, DirectorsVm>();
+            CreateMap<Actor, ActorsVm>();
 
             CreateMap<CreateStreamerCommand, Streamer>();
             CreateMap<UpdateStreamerCommand, Streamer>();
