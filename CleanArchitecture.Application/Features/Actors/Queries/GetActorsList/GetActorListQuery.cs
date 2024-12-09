@@ -8,5 +8,14 @@ namespace CleanArchitecture.Application.Features.Actors.Queries.GetActorsList
 {
     internal class GetActorListQuery
     {
+
+
+        public string _Username { get; set; }
+
+        public GetActorListQuery(string username)
+        {
+            _Username = username;
+        }
+
     }
 }
