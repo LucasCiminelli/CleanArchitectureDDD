@@ -19,6 +19,8 @@ namespace CleanArchitecture.Application.UnitTests.Mock
 
             streamers.Add(fixture.Build<Streamer>()
                .With(tr => tr.Id, 8001)
+               .With(tr => tr.Nombre, "LucasFlix")
+               .With(tr => tr.CreatedBy, "Lucas")
                .Without(tr => tr.Videos)
                .Create()
            );
