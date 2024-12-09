@@ -13,6 +13,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
         private IVideoRepository _videoRepository;
         private IStreamerRepository _streamerRepository;
         private IDirectorRepository _directorRepository;
+        private IActorRepository _actorRepository;
 
 
         public IVideoRepository VideoRepository => _videoRepository ??= new VideoRepository(_context);
@@ -20,6 +21,8 @@ namespace CleanArchitecture.Infrastructure.Repositories
         public IStreamerRepository StreamerRepository => _streamerRepository ??= new StreamerRepository(_context);
 
         public IDirectorRepository DirectorRepository => _directorRepository ??= new DirectorRepository(_context);
+
+        public IActorRepository ActorRepository => _actorRepository ??= new ActorRepository(_context);
 
         public UnitOfWork(StreamerDbContext context)
         {

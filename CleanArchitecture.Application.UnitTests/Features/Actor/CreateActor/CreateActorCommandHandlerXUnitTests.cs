@@ -50,7 +50,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Actor.CreateActor
             {
 
                 Nombre = "Lucas",
-                Apellido = "Ciminelli"
+                Apellido = "Ciminelli",
 
             };
 

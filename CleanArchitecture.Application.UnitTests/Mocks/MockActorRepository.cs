@@ -24,6 +24,7 @@ namespace CleanArchitecture.Application.UnitTests.Mocks
                 .With(actor => actor.Id, 1111)
                 .With(actor => actor.Nombre, "Lucas")
                 .With(actor => actor.Apellido, "Ciminelli")
+                .With(actor => actor.CreatedBy, "Lucas")
                 .Without(actor => actor.Videos)
                 .Create()
             );
