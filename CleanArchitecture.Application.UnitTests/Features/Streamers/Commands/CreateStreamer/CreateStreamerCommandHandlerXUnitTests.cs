@@ -10,7 +10,7 @@ using Moq;
 using Shouldly;
 using Xunit;
 
-namespace CleanArchitecture.Application.UnitTests.Features.Streamers.CreateStreamer
+namespace CleanArchitecture.Application.UnitTests.Features.Streamers.Commands.CreateStreamer
 {
     public class CreateStreamerCommandHandlerXUnitTests
     {
@@ -31,7 +31,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.CreateStrea
             _emailService = new Mock<IEmailService>();
 
             _logger = new Mock<ILogger<CreateStreamerCommandHandler>>();
-            
+
 
             MockStreamerRepository.AddDataStreamerRepository(_unitOfWork.Object.StreamerDbContext);
         }

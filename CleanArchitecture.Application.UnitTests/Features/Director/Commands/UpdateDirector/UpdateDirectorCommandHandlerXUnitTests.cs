@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace CleanArchitecture.Application.UnitTests.Features.Director.UpdateDirector
+namespace CleanArchitecture.Application.UnitTests.Features.Director.Commands.UpdateDirector
 {
     public class UpdateDirectorCommandHandlerXUnitTests
     {

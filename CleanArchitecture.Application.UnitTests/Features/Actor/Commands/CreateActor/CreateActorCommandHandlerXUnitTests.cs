@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Infrastructure;
-using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
-using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
+using CleanArchitecture.Application.Features.Actors.Commands.CreateActor;
+using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
 using CleanArchitecture.Application.UnitTests.Mocks;
 using CleanArchitecture.Infrastructure.Repositories;
-using MediatR;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Shouldly;
@@ -17,51 +16,50 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace CleanArchitecture.Application.UnitTests.Features.Actor.UpdateActor
+namespace CleanArchitecture.Application.UnitTests.Features.Actor.Commands.CreateActor
 {
-    public class UpdateActorCommandHandlerXUnitTests
+    public class CreateActorCommandHandlerXUnitTests
     {
 
         private readonly IMapper _mapper;
         private readonly Mock<UnitOfWork> _unitOfWork;
-        private readonly Mock<ILogger<UpdateActorCommandHandler>> _logger;
+        private readonly Mock<ILogger<CreateActorCommandHandler>> _logger;
 
-        public UpdateActorCommandHandlerXUnitTests()
+        public CreateActorCommandHandlerXUnitTests()
         {
 
             _unitOfWork = MockUnitOfWork.GetUnitOfWork();
+
             var mapperConfig = new MapperConfiguration(c =>
             {
                 c.AddProfile<MappingProfile>();
             });
             _mapper = mapperConfig.CreateMapper();
 
-            _logger = new Mock<ILogger<UpdateActorCommandHandler>>();
+            _logger = new Mock<ILogger<CreateActorCommandHandler>>();
 
 
             MockActorRepository.AddDataActorRepository(_unitOfWork.Object.StreamerDbContext);
-
         }
 
-
         [Fact]
-
-        public async Task UpdateActorCommand_ActorInput_ReturnsUnit()
+        public async Task CreateActorCommand_InputActor_ReturnsNumber()
         {
 
-            var actorInput = new UpdateActorCommand
+            var actorInput = new CreateActorCommand
             {
-                Id = 1111,
+
                 Nombre = "Lucas",
-                Apellido = "Ciminelli"
+                Apellido = "Ciminelli",
+
             };
 
-            var handler = new UpdateActorCommandHandler(_logger.Object, _mapper, _unitOfWork.Object);
+            var handler = new CreateActorCommandHandler(_logger.Object, _unitOfWork.Object, _mapper);
 
             var result = await handler.Handle(actorInput, CancellationToken.None);
 
-            result.ShouldBeOfType<Unit>();
 
+            result.ShouldBeOfType<int>();
         }
     }
 }

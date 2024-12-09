@@ -10,7 +10,7 @@ using Moq;
 using Shouldly;
 using Xunit;
 
-namespace CleanArchitecture.Application.UnitTests.Features.Streamers.UpdateStreamer
+namespace CleanArchitecture.Application.UnitTests.Features.Streamers.Commands.UpdateStreamer
 {
     public class UpdateStreamerCommandHandlerXUnitTests
     {

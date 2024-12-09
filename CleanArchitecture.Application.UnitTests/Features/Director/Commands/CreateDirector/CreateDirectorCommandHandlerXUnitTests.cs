@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace CleanArchitecture.Application.UnitTests.Features.Director.CreateDirector
+namespace CleanArchitecture.Application.UnitTests.Features.Director.Commands.CreateDirector
 {
     public class CreateDirectorCommandHandlerXUnitTests
     {
@@ -37,7 +37,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Director.CreateDirect
 
             });
 
-           _mapper = mappingConfig.CreateMapper();
+            _mapper = mappingConfig.CreateMapper();
 
             _logger = new Mock<ILogger<CreateDirectorCommandHandler>>();
 

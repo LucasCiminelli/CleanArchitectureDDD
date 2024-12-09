@@ -10,7 +10,7 @@ using Shouldly;
 using Xunit;
 
 
-namespace CleanArchitecture.Application.UnitTests.Features.Streamers.DeleteStreamer
+namespace CleanArchitecture.Application.UnitTests.Features.Streamers.Commands.DeleteStreamer
 {
     public class DeleteStreamerCommandHandlerXUnitTests
     {
@@ -26,7 +26,7 @@ namespace CleanArchitecture.Application.UnitTests.Features.Streamers.DeleteStrea
                 c.AddProfile<MappingProfile>();
             });
             _mapper = mapperConfig.CreateMapper();
-            
+
             _logger = new Mock<ILogger<DeleteStreamerCommandHandler>>();
 
             MockStreamerRepository.AddDataStreamerRepository(_unitOfWork.Object.StreamerDbContext);
