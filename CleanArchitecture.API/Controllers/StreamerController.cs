@@ -1,6 +1,8 @@
 ﻿using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
+using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamerByNombre;
+using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -56,6 +58,28 @@ namespace CleanArchitecture.API.Controllers
             await _mediator.Send(command);
 
             return NoContent();    
+        }
+
+
+        [HttpGet("username/{username}", Name = "GetStreamer")]
+        [ProducesResponseType(typeof(IEnumerable<StreamersVm>), (int)HttpStatusCode.OK)]
+
+        public async Task<ActionResult<IEnumerable<StreamersVm>>> GetStreamersList(string username)
+        {
+            var query = new GetStreamersListQuery(username);
+            var streamers = await _mediator.Send(query);
+            return Ok(streamers);
+
+        }
+
+        [HttpGet("nombre/{nombre}", Name = "GetStreamerByName")]
+        [ProducesResponseType(typeof(StreamersVm), (int)HttpStatusCode.OK)]
+
+        public async Task <ActionResult<StreamersVm>> GetStreamerByNombre(string nombre)
+        {
+            var query = new GetStreamerByNombreQuery(nombre);
+            var streamer = await _mediator.Send(query);
+            return Ok(streamer);
         }
 
     }
