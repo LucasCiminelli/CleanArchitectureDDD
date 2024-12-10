@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+﻿using CleanArchitecture.Application.Features.Videos.Queries.GetVideoByNombre;
+using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +18,23 @@ namespace CleanArchitecture.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("{username}", Name = "GetVideo")]
+        [HttpGet("username/{username}", Name = "GetVideo")]
         [Authorize]
         [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideosByUsername(string username)
         {
             var query = new GetVideosListQuery(username);
+            var videos = await _mediator.Send(query);
+            return Ok(videos);
+        }
+
+        [HttpGet("nombre/{nombre}", Name= "GetVideoByNombre")]
+        [Authorize]
+        [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int)HttpStatusCode.OK)]
+
+        public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideoByNombre(string nombre)
+        {
+            var query = new GetVideoByNombreQuery(nombre);
             var videos = await _mediator.Send(query);
             return Ok(videos);
         }
