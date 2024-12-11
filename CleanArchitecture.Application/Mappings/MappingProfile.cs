@@ -11,6 +11,7 @@ using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
 using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
+using CleanArchitecture.Application.Features.Videos.Commands.CreateVideo;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
 using CleanArchitecture.Domain;
 
@@ -24,6 +25,8 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<Director, DirectorsVm>();
             CreateMap<Actor, ActorsVm>();
             CreateMap<Streamer, StreamersVm>();
+
+            CreateMap<CreateVideoCommand, Video>();
 
             CreateMap<CreateStreamerCommand, Streamer>();
             CreateMap<UpdateStreamerCommand, Streamer>();
