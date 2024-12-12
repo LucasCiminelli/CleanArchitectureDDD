@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Videos\Commands\" />
+    <Folder Include="Features\Videos\Commands\UpdateVideo\" />
   </ItemGroup>
 
   <ItemGroup>
