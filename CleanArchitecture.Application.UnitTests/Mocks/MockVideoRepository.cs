@@ -16,8 +16,10 @@ namespace CleanArchitecture.Application.UnitTests.Mock
             var videos = fixture.CreateMany<Video>().ToList();
             
             videos.Add(fixture.Build<Video>()
+                .With(tr => tr.Id, 1)
                 .With(tr => tr.CreatedBy, "Lucas")
                 .With(tr => tr.Nombre, "Titanic")
+                .With(tr => tr.StreamerId, 8001)
                 .Create()
             );
 
