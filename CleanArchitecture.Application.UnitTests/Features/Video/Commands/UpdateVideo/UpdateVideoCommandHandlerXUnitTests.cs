@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.UnitTests.Features.Video.Commands.UpdateVideo
 {
-    internal class UpdateVideoCommandHandlerXUnitTests
+    public class UpdateVideoCommandHandlerXUnitTests
     {
     }
 }

@@ -33,8 +33,4 @@
     <ProjectReference Include="..\CleanArchitecture.Data\CleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Video\Commands\" />
-  </ItemGroup>
-
 </Project>
