@@ -67,7 +67,7 @@ namespace CleanArchitecture.API.Controllers
         }
 
 
-        [HttpDelete(Name = "DeleteVideo")]
+        [HttpDelete("{id}", Name = "DeleteVideo")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

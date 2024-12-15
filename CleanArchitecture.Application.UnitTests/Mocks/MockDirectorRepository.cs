@@ -23,7 +23,6 @@ namespace CleanArchitecture.Application.UnitTests.Mocks
                 .With(d => d.Id, 1111)
                 .With(d => d.Nombre, "Lucas")
                 .With(d => d.Apellido, "Ciminelli")
-                .With(d => d.VideoId, 1)
                 .With(d => d.CreatedBy, "Lucas")
                 .Create();
 
