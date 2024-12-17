@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
+﻿using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Castle.Core.Logging;
 using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
+using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
 using CleanArchitecture.Infrastructure.Repositories;

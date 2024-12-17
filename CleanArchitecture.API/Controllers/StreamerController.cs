@@ -3,6 +3,8 @@ using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
 using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamerByNombre;
 using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
+using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersListByUrl;
+using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +12,7 @@ using System.Net;
 
 namespace CleanArchitecture.API.Controllers
 {
-    
+
     [ApiController]
     [Route("api/v1/[controller]")]
     public class StreamerController : ControllerBase
@@ -71,6 +73,19 @@ namespace CleanArchitecture.API.Controllers
             return Ok(streamers);
 
         }
+
+        [HttpGet("ByUrl/{url}", Name = "GetStreamerByUrl")]
+        [ProducesResponseType(typeof(IEnumerable<StreamersVm>), (int)HttpStatusCode.OK)]
+
+        public async Task<ActionResult<IEnumerable<StreamersVm>>> GetStreamersListByUrl(string url)
+        {
+            var query = new GetStreamersListByUrlQuery(url);
+            var streamers = await _mediator.Send(query);
+            return Ok(streamers);
+
+        }
+
+
 
         [HttpGet("nombre/{nombre}", Name = "GetStreamerByName")]
         [ProducesResponseType(typeof(StreamersVm), (int)HttpStatusCode.OK)]

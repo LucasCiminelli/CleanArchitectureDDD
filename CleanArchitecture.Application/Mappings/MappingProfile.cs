@@ -10,7 +10,7 @@ using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
 using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
-using CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersList;
+using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
 using CleanArchitecture.Application.Features.Videos.Commands.CreateVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.DeleteVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.UpdateVideo;

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace CleanArchitecture.Application.Features.Streamers.Queries.GetStreamersL
     public class GetStreamersListQuery : IRequest<List<StreamersVm>>
     {
 
-        public string _Username { get; set; } = string.Empty;
+        public string? _Username { get; set; }
 
         public GetStreamersListQuery(string username)
         {
-            _Username = username;
+            _Username = username ?? throw new ArgumentNullException(nameof(username));
         }
     }
 }
