@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Features.Videos.Commands.DeleteVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.UpdateVideo;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideoByNombre;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+using CleanArchitecture.Application.Features.Videos.Queries.GetVideosListByStreamerId;
 using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using CleanArchitecture.Domain;
 using MediatR;
@@ -43,6 +44,19 @@ namespace CleanArchitecture.API.Controllers
             var videos = await _mediator.Send(query);
             return Ok(videos);
         }
+
+        [HttpGet("ByStreamerId/{streamerId}", Name = "GetVideoByStreamerId")]
+        //[Authorize]
+        [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int)HttpStatusCode.OK)]
+
+        public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideosByStreamerId(int streamerId)
+        {
+            var query = new GetVideosListByStreamerIdQuery(streamerId);
+            var videos = await _mediator.Send(query);
+
+            return Ok(videos);
+        }
+
 
 
         [HttpPost(Name ="CreateVideo")]
