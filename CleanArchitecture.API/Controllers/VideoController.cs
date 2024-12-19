@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Features.Videos.Commands.DeleteVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.UpdateVideo;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideoByNombre;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

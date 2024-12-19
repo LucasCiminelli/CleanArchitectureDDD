@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Features.Actors.Commands.DeleteActor;
 using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
 using CleanArchitecture.Application.Features.Actors.Queries.GetActorByNombre;
 using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CleanArchitecture.Application.Features.Actors.Queries.Vms;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;

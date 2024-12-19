@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using CleanArchitecture.Application.Mappings;
-using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 
 namespace CleanArchitecture.Application.UnitTests.Features.Video.Queries
 {

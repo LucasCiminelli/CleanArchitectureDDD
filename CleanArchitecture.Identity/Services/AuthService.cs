@@ -33,7 +33,7 @@ namespace CleanArchitecture.Identity.Services
                 throw new Exception($"El usuario con email {request.Email} no existe");
             }
 
-           var resultado = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
+            var resultado = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
 
             if (!resultado.Succeeded)
             {
@@ -121,11 +121,11 @@ namespace CleanArchitecture.Identity.Services
                     audience: _jwtSettings.Audience,
                     claims: claims,
                     expires: DateTime.UtcNow.AddMinutes(_jwtSettings.DurationInMinutes),
-                    signingCredentials: signingCredentials);
+                    signingCredentials: signingCredentials
+            );
 
-                
-           return jwtSecurityToken;
+            return jwtSecurityToken;
         }
-    
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Persistence;
+using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using CleanArchitecture.Domain;
 using MediatR;
 using System;

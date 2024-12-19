@@ -13,7 +13,5 @@ namespace CleanArchitecture.Application.Specifications
         Expression<Func<T, bool>> Criteria { get; }
         List<Expression<Func<T, object>>> Inlcudes { get; }
 
-
-
     }
 }

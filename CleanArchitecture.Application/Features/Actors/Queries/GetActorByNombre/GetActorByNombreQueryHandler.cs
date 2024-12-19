@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Exceptions;
-using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;

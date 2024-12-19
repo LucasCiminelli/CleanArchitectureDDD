@@ -14,7 +14,7 @@ using CleanArchitecture.Application.Features.Streamers.Queries.Vms;
 using CleanArchitecture.Application.Features.Videos.Commands.CreateVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.DeleteVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.UpdateVideo;
-using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using CleanArchitecture.Domain;
 
 namespace CleanArchitecture.Application.Mappings

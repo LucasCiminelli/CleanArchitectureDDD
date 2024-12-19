@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+﻿using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using CleanArchitecture.Domain;
 using MediatR;
 using System;

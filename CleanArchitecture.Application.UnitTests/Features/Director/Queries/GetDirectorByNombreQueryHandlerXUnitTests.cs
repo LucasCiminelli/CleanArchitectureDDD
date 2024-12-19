@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Castle.Core.Logging;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorByNombre;
-using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideoByNombre;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;

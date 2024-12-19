@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+﻿using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using MediatR;
 using System;
 using System.Collections.Generic;

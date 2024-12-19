@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+﻿using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 using MediatR;
 using System;
 using System.Collections.Generic;
