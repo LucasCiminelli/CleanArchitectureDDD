@@ -20,6 +20,24 @@ namespace CleanArchitecture.Infrastructure.Specification
                 inputQuery = inputQuery.Where(spec.Criteria);
             }
 
+            if (spec.OrderBy != null)
+            {
+                inputQuery.OrderBy(spec.OrderBy);
+
+            }
+
+            if (spec.OrderByDescending != null)
+            {
+                inputQuery.OrderBy(spec.OrderByDescending);
+
+            }
+
+            if (spec.isPagingEnable)
+            {
+                inputQuery = inputQuery.Skip(spec.Skip).Take(spec.Take);
+            }
+
+
             inputQuery = spec.Inlcudes.Aggregate(inputQuery, (current, include) => current.Include(include));
 
 
