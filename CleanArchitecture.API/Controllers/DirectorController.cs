@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Features.Directors.Commands.DeleteDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.UpdateDirector;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorByNombre;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

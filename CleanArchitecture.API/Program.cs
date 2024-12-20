@@ -63,7 +63,6 @@ using (var scope = app.Services.CreateScope())
         var contextIdentity = service.GetRequiredService<CleanArchitectureIdentityDbContext>();
         await contextIdentity.Database.MigrateAsync();
 
-
     }
     catch (Exception ex)
     {
@@ -72,9 +71,5 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
-
-
-
-
 
 app.Run();

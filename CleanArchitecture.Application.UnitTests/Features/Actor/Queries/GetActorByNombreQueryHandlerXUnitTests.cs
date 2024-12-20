@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Castle.Core.Logging;
 using CleanArchitecture.Application.Features.Actors.Queries.GetActorByNombre;
-using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
 using CleanArchitecture.Application.UnitTests.Mocks;

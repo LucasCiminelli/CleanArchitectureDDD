@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
 using CleanArchitecture.Infrastructure.Repositories;

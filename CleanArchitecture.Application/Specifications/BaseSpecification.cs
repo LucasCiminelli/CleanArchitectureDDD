@@ -56,6 +56,5 @@ namespace CleanArchitecture.Application.Specifications
             Inlcudes.Add(includeExpression);
         }
 
-
     }
 }

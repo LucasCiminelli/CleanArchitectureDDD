@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using CleanArchitecture.Application.Mappings;
 using CleanArchitecture.Application.UnitTests.Mock;
 using CleanArchitecture.Application.UnitTests.Mocks;

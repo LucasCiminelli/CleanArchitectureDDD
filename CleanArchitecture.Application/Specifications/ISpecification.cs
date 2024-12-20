@@ -22,5 +22,7 @@ namespace CleanArchitecture.Application.Specifications
         bool isPagingEnable {  get; }
 
 
+
+
     }
 }

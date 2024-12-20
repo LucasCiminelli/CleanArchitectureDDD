@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CleanArchitecture.Application.Features.Videos.Queries.Vms;
+using MediatR;
 
 namespace CleanArchitecture.Application.Features.Videos.Queries.GetVideosList
 {

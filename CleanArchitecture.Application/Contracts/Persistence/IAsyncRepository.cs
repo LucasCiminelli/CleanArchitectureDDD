@@ -42,7 +42,5 @@ namespace CleanArchitecture.Application.Contracts.Persistence
 
         Task<int> CountAsync(ISpecification<T> spec);
 
-
-
     }
 }
