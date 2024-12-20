@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
+﻿using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

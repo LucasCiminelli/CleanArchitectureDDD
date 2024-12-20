@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList
+namespace CleanArchitecture.Application.Features.Directors.Queries.Vms
 {
     public class DirectorsVm
     {

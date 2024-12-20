@@ -17,4 +17,3 @@ namespace CleanArchitecture.Application.Features.Actors.Queries.Vms
         public ICollection<VideosVm>? Videos { get; set; }
     }
 }
-                                                                                                            

@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+﻿using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 
-namespace CleanArchitecture.Application.Features.Videos.Queries.GetVideosList
+namespace CleanArchitecture.Application.Features.Videos.Queries.Vms
 {
-    public  class VideosVm
+    public class VideosVm
     {
         public string? Nombre { get; set; }
 

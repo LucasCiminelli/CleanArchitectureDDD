@@ -2,11 +2,11 @@
 using CleanArchitecture.Application.Features.Actors.Commands.CreateActor;
 using CleanArchitecture.Application.Features.Actors.Commands.DeleteActor;
 using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
-using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+using CleanArchitecture.Application.Features.Actors.Queries.Vms;
 using CleanArchitecture.Application.Features.Directors.Commands.CreateDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.DeleteDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.UpdateDirector;
-using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+using CleanArchitecture.Application.Features.Directors.Queries.Vms;
 using CleanArchitecture.Application.Features.Streamers.Commands;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Application.Features.Streamers.Commands.UpdateStreamer;
