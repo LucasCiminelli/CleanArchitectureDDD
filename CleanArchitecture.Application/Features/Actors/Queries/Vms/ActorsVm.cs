@@ -14,6 +14,6 @@ namespace CleanArchitecture.Application.Features.Actors.Queries.Vms
 
         public string Apellido { get; set; } = string.Empty;
 
-        public ICollection<VideosVm>? Videos { get; set; }
+       
     }
 }

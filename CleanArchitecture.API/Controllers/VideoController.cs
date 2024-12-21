@@ -24,7 +24,7 @@ namespace CleanArchitecture.API.Controllers
         }
 
         [HttpGet("username/{username}", Name = "GetVideo")]
-        [Authorize]
+        //[Authorize]
         [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideosByUsername(string username)
         {
@@ -34,7 +34,7 @@ namespace CleanArchitecture.API.Controllers
         }
 
         [HttpGet("nombre/{nombre}", Name= "GetVideoByNombre")]
-        [Authorize]
+        //[Authorize]
         [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int)HttpStatusCode.OK)]
 
         public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideoByNombre(string nombre)
