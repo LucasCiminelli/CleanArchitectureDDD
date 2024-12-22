@@ -10,7 +10,7 @@ namespace CleanArchitecture.Application.Specifications
     {
 
         public string? Sort { get; set; }
-        public int Index { get; set; } = 1;
+        public int PageIndex { get; set; } = 1;
 
         private const int MaxPageSize = 50;
         private int _pageSize = 3;

@@ -3,7 +3,9 @@ using CleanArchitecture.Application.Features.Directors.Commands.DeleteDirector;
 using CleanArchitecture.Application.Features.Directors.Commands.UpdateDirector;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorByNombre;
 using CleanArchitecture.Application.Features.Directors.Queries.GetDirectorList;
+using CleanArchitecture.Application.Features.Directors.Queries.PaginationDirector;
 using CleanArchitecture.Application.Features.Directors.Queries.Vms;
+using CleanArchitecture.Application.Features.Shared.Queries;
 using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -58,6 +60,18 @@ namespace CleanArchitecture.API.Controllers
 
             return NoContent();
         }
+
+
+        [HttpGet("pagination", Name = "PaginationDirector")]
+        [ProducesResponseType(typeof(PaginationVm<DirectorsVm>),(int)HttpStatusCode.OK)]
+
+        public async Task <ActionResult<PaginationVm<DirectorsVm>>> GetPaginationDirector([FromQuery] PaginationDirectorsQuery paginationDirectorQuery)
+        {
+            var paginationDirector = await _mediator.Send(paginationDirectorQuery);
+
+            return Ok(paginationDirector);
+        }
+
 
         [HttpGet("username/{username}", Name ="GetDirector")]
         [ProducesResponseType(typeof(IEnumerable<DirectorsVm>), (int)HttpStatusCode.OK)]
