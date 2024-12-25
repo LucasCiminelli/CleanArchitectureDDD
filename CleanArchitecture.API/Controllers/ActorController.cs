@@ -3,7 +3,9 @@ using CleanArchitecture.Application.Features.Actors.Commands.DeleteActor;
 using CleanArchitecture.Application.Features.Actors.Commands.UpdateActor;
 using CleanArchitecture.Application.Features.Actors.Queries.GetActorByNombre;
 using CleanArchitecture.Application.Features.Actors.Queries.GetActorsList;
+using CleanArchitecture.Application.Features.Actors.Queries.PaginationActor;
 using CleanArchitecture.Application.Features.Actors.Queries.Vms;
+using CleanArchitecture.Application.Features.Shared.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -79,6 +81,16 @@ namespace CleanArchitecture.API.Controllers
             var actor = await _mediator.Send(query);
 
             return actor;
+        }
+
+        [HttpGet("pagination", Name = "PaginationActor")]
+        [ProducesResponseType(typeof(PaginationVm<ActorsVm>), (int)HttpStatusCode.OK)]
+
+        public async Task<ActionResult<PaginationVm<ActorsVm>>> GetPaginationActor([FromQuery] PaginationActorQuery paginationActorQuery)
+        {
+            var paginationActor = await _mediator.Send(paginationActorQuery);
+
+            return Ok(paginationActor);
         }
 
     }

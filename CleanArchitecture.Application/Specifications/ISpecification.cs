@@ -17,12 +17,9 @@ namespace CleanArchitecture.Application.Specifications
 
         Expression<Func<T, object>> OrderByDescending { get; }
 
-        int Take {  get; }
+        int Take { get; }
         int Skip { get; }
-        bool isPagingEnable {  get; }
-
-
-
+        bool isPagingEnable { get; }
 
     }
 }
