@@ -1,9 +1,11 @@
-﻿using CleanArchitecture.Application.Features.Videos.Commands.CreateVideo;
+﻿using CleanArchitecture.Application.Features.Shared.Queries;
+using CleanArchitecture.Application.Features.Videos.Commands.CreateVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.DeleteVideo;
 using CleanArchitecture.Application.Features.Videos.Commands.UpdateVideo;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideoByNombre;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosList;
 using CleanArchitecture.Application.Features.Videos.Queries.GetVideosListByStreamerId;
+using CleanArchitecture.Application.Features.Videos.Queries.PaginationVideos;
 using CleanArchitecture.Application.Features.Videos.Queries.Vms;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -54,6 +56,17 @@ namespace CleanArchitecture.API.Controllers
             var videos = await _mediator.Send(query);
 
             return Ok(videos);
+        }
+
+        [HttpGet("pagination", Name = "PaginationVideo")]
+        [ProducesResponseType(typeof(PaginationVm<VideosWithIncludesVm>), (int)HttpStatusCode.OK)]
+        
+        public async Task<ActionResult<PaginationVm<VideosWithIncludesVm>>> GetPaginationVideo([FromQuery] PaginationVideosQuery paginationVideoParams)
+        {
+
+            var paginationVideo = await _mediator.Send(paginationVideoParams);
+            return Ok(paginationVideo);
+
         }
 
 

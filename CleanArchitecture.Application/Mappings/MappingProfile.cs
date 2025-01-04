@@ -24,6 +24,11 @@ namespace CleanArchitecture.Application.Mappings
         public MappingProfile()
         {
             CreateMap<Video, VideosVm>();
+            CreateMap<Video, VideosWithIncludesVm>()
+                .ForMember(p => p.DirectorNombreCompleto, x => x.MapFrom(a => a.Director!.NombreCompleto))
+                .ForMember(p => p.StreamerNombre, x => x.MapFrom(a => a.Streamer!.Nombre))
+                .ForMember(p => p.Actores, x => x.MapFrom(a => a.Actores!));
+
             CreateMap<Director, DirectorsVm>();
             CreateMap<Actor, ActorsVm>();
             CreateMap<Streamer, StreamersVm>();
@@ -31,7 +36,7 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<CreateVideoCommand, Video>();
             CreateMap<UpdateVideoCommand, Video>();
             CreateMap<DeleteVideoCommand, Video>();
-            
+
             CreateMap<CreateStreamerCommand, Streamer>();
             CreateMap<UpdateStreamerCommand, Streamer>();
             CreateMap<DeleteStreamerCommand, Streamer>();
@@ -39,10 +44,10 @@ namespace CleanArchitecture.Application.Mappings
             CreateMap<CreateDirectorCommand, Director>();
             CreateMap<UpdateDirectorCommand, Director>();
             CreateMap<DeleteDirectorCommand, Director>();
-            
+
             CreateMap<CreateActorCommand, Actor>();
             CreateMap<UpdateActorCommand, Actor>();
-            CreateMap<DeleteActorCommand, Actor>();    
+            CreateMap<DeleteActorCommand, Actor>();
         }
     }
 }
