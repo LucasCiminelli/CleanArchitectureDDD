@@ -41,12 +41,7 @@ namespace CleanArchitecture.Application.Specifications.Videos
                 }
             }
 
-
-
-
-
         }
-
 
     }
 }
