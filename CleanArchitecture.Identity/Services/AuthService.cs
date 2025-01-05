@@ -56,9 +56,10 @@ namespace CleanArchitecture.Identity.Services
             var authResponse = new AuthResponse
             {
                 Id = user.Id,
-                Token = new JwtSecurityTokenHandler().WriteToken(token),
+                Token = token.Item1,
                 Email = user.Email,
                 Username = user.UserName,
+                RefreshToken = token.Item2,
             };
 
             return authResponse;
@@ -257,11 +258,9 @@ namespace CleanArchitecture.Identity.Services
                 throw new Exception($"El email ya fue tomado por otra cuenta");
             }
 
-            var user = new ApplicationUser
+            var user = new IdentityUser
             {
                 Email = request.Email,
-                Nombre = request.Nombre,
-                Apellidos = request.Apellidos,
                 UserName = request.Username,
                 EmailConfirmed = true
             };
@@ -269,14 +268,28 @@ namespace CleanArchitecture.Identity.Services
             var result = await _userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "Operator");
+                var applicationUser = new ApplicationUser
+                {
+                    IdentityId = new Guid(user.Id),
+                    Nombre = request.Nombre,
+                    Apellidos = request.Apellidos,
+                    Country = request.Country,
+                    Email = request.Email,
+                    Phone = request.Phone
+                };
+
+                _context.ApplicationUsers!.Add(applicationUser);
+                await _context.SaveChangesAsync();
+
+                
                 var token = await GenerateToken(user);
                 return new RegistrationResponse
                 {
                     Email = user.Email,
-                    Token = new JwtSecurityTokenHandler().WriteToken(token),
+                    Token = token.Item1,
                     UserId = user.Id,
                     Username = user.UserName,
+                    RefreshToken = token.Item2
                 };
             }
 

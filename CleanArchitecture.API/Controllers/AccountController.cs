@@ -17,14 +17,20 @@ namespace CleanArchitecture.API.Controllers
 
         [HttpPost("Login")]
         public async Task<ActionResult<AuthResponse>> Login([FromBody] AuthRequest request)
-        { 
-            return Ok( await _authService.Login(request));
+        {
+            return Ok(await _authService.Login(request));
         }
 
         [HttpPost("Register")]
         public async Task<ActionResult<RegistrationResponse>> Register([FromBody] RegistrationRequest request)
         {
             return Ok(await _authService.Register(request));
+        }
+
+        [HttpPost("RefreshToken")]
+        public async Task<ActionResult<AuthResponse>> RefreshToken([FromBody] TokenRequest request)
+        {
+            return Ok(await _authService.RefereshToken(request));
         }
 
     }

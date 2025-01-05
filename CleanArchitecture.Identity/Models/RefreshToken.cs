@@ -16,7 +16,7 @@ namespace CleanArchitecture.Identity.Models
         public string? JwtId { get; set; }
         public bool IsUsed { get; set; }
         public bool IsRevoked { get; set; }
-        public DateTime ExpireDate { get; set; }
+        public DateTime? ExpireDate { get; set; }
 
         [ForeignKey(nameof(UserId))]
         public IdentityUser? User { get; set; }
